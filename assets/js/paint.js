@@ -1,20 +1,27 @@
-function configureListeners() {
-    let images = // select img elements  
+let configureListeners= () => {
+    // select img elements  
+    let images =document.getElementsByTagName('img';)
 
-
-     for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+     for (let i = 0; i < images.length; i++) {        
+        // iterate over images and add mouseover event listeners    
+        document.getElementById(images[i].id).addEventListener('mouseover',addOpacity, false)
+        document.getElementById(images[i].id).addEventListener('mouseover',removeOpacity, false)  
     } 
 }
 
-function addOpacity(event) {
+let addOpacity = (event) => {
     // add appropriate CSS class
+    if (!this.classList.contains('dim')){
+        this.classList.add('dim')
+    }
     getProductInfo(event.target.id);     
 }
 
-function removeOpacity(event) {
+let removeOpacity = (event) => {
      //remove appropriate CSS class
-
+     if (!this.classList.contains('dim')){
+        this.classList.add('dim')
+    }
     let element = document.getElementById('color-price');
         element.textContent = '';
         
